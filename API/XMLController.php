@@ -26,6 +26,4 @@ abstract class XMLController extends Controller
         return $this->userData->userData();
     }
 
-    //abstract protected function createXml(object $data): string;
-
 }
