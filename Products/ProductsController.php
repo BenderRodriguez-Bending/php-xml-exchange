@@ -17,13 +17,11 @@ class ProductsController extends Controller implements SettingsController
 {
 
     private $API;
-    private $analysis;
 
     public function __construct()
     {
         $this->middleware('auth');
         $this->API = new Index();
-        $this->analysis = new AnalysisController();
     }
 
 
@@ -54,8 +52,7 @@ class ProductsController extends Controller implements SettingsController
 
     public function calc(Request $data): string
     {
-        $data = new SimpleXMLElement($this->API->calc($data));
-        return $this->analysis->analysisResponseCalc($data);
+        return new SimpleXMLElement($this->API->calc($data));
     }
 
 
@@ -65,8 +62,7 @@ class ProductsController extends Controller implements SettingsController
 
     public function confirm(Request $data): string
     {
-        $response = new SimpleXMLElement($this->API->confirm($data));
-        return $this->analysis->analysisResponseConfirm($response);
+        return new SimpleXMLElement($this->API->confirm($data));
     }
 
     /**
@@ -75,8 +71,7 @@ class ProductsController extends Controller implements SettingsController
 
     public function print(Request $data): string
     {
-        $response = new SimpleXMLElement($this->API->print($data));
-        return $this->analysis->analysisResponsePrint($response);
+        return new SimpleXMLElement($this->API->print($data));
     }
 
     /**
@@ -97,8 +92,7 @@ class ProductsController extends Controller implements SettingsController
      */
     public function search_prolong(Request $data): string
     {
-        $response = new SimpleXMLElement($this->API->search_prolong($data));
-        return $this->analysis->analysisResponseProlong($response);
+        return new SimpleXMLElement($this->API->search_prolong($data));
     }
 
     /**
@@ -106,8 +100,7 @@ class ProductsController extends Controller implements SettingsController
      */
     public function agr_prolong(Request $data): string
     {
-        $response = new SimpleXMLElement($this->API->agr_prolong($data));
-        return $this->analysis->analysisResponseProlong($response);
+        return new SimpleXMLElement($this->API->agr_prolong($data));
     }
 
 }
