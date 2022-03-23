@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\CONSOLIDATION\Products;
+namespace App\Http\Controllers\Products;
 
 use App\API\Index;
-use App\Http\Controllers\CONSOLIDATION\SettingsController;
 use Exception;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
