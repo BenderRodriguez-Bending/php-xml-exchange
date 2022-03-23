@@ -26,7 +26,7 @@ class XMLIndex
                 $this->XMLInfo->XMLInfo($xml, $type, $data);
                 $this->XMLServiceData->XMLServiceData($xml);
                 $xml->startElement("Body");
-                    call_user_func_array(array('App\API\XML\XMLBody', 'bodyXml'), array($xml, $data));
+                    XMLBody::bodyXml($xml, $data);
                 $xml->endElement();
             $xml->endElement();
         $xml->endDocument();
