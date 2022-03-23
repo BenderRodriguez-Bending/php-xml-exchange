@@ -3,7 +3,6 @@
 
 namespace App\API;
 
-use App\Models\Logs;
 use Exception;
 use SimpleXMLElement;
 use XMLWriter;
